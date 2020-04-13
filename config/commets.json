@@ -1,0 +1,38 @@
+{
+    "CellValidator" : {
+        "columns_reference" : ["column"], 
+        "methods" : {
+            "is_dni" : {
+                "show": true, 
+                "message" : "- El valor {value} no es un DNI válido"},
+            "is_not_empty" : {
+                "show": true, 
+                "message" : "- El campo está vacío"},
+            "is_orcid" : {
+                "show": true, 
+                "message" : "- No es un ORCID válido"},
+            "is_gender" : {
+                "show": true, 
+                "message": "- El género no se encuentra dentro del rango de valores aceptados."},
+            "is_date" : {
+                "show": true, 
+                "message": "- El formato de la fecha {value} del registro {record} no es el correcto, debe ser dd-mm-YYYY"},
+            "is_email" : {
+                "show": true, 
+                "message": "- El formato de la dirección de correo no es correcta"}
+        }
+    },
+    "DuplicateValidator" : {
+        "columns_reference" : ["column","target"],
+        "methods" : {   
+            "check_duplicates":{
+                "single_column":{
+                    "show": false, 
+                    "message": ""},
+                "double_column":{
+                    "show": true, 
+                    "message": "- El valor {value} se repite en el registro {record} de la columna {column} y {target}"}           
+            }
+        }
+    }
+}

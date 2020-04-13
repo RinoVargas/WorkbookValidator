@@ -1,0 +1,32 @@
+{
+    "orcid":[
+        "is_orcid",
+        {
+            "check_duplicates": {
+                "column" : "orcid",
+                "column_dtype": "str"
+            }
+        }
+    ],
+    "peCTIVitaeID": [
+        "is_not_empty"
+    ],
+    "cfGender": [
+        "is_not_empty",
+        "is_gender"
+    ],
+    "peFechaNacimiento": [
+        "is_date"
+    ],
+    "scopusid": [
+        "is_not_empty",
+        {
+            "check_duplicates": {
+                "column" : "scopusid",
+                "column_dtype":"int",
+                "target": "oaAlternativeScopusAuthorID",
+                "target_spliter" : "|||"
+            }
+        }
+    ]
+}
